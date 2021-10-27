@@ -1,17 +1,13 @@
 body {
   margin: 0;
-  font-family: 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: red;
+  font: 18px Helvetica;
+  background: black;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a { color: white; }
+
+div.card {
+  width: 700px;
+  margin: auto;
 }
-
-a { color: orange; }
-a.router-link-active { color: orange; }
-
