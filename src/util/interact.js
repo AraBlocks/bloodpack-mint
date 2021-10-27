@@ -6,7 +6,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 // const contractABI = require('./contract-abi.js');
 let contractABI = require('./contract-abi.json');
 // contractABI = JSON.parse(contractABI);
-const contractAddress = '0x';
+const contractAddress = '0xd80B07293C85C91A221B0538369994C70fb5cdBe';//rinkeby
 
 export const BloodpackContract = new web3.eth.Contract(contractABI, contractAddress);
 BloodpackContract.handleRevert = true;
@@ -91,7 +91,7 @@ export const getCurrentWalletConnected = async () => {
 
 export const mintToken = async (address, qty) => {
   BloodpackContract.handleRevert = true;
-  const costOfNFTS = qty * 100000000000000000;
+  const costOfNFTS = qty * 666000000000;//changed to 0.000000666 ETH ~$0.0028
   const checkTotal = await BloodpackContract.methods.maximumAllowedTokensPerPurchase().call();
   const currentBalance = await web3.eth.getBalance(address);
   if (currentBalance > costOfNFTS) {

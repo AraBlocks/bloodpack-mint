@@ -73,6 +73,11 @@ const Wallet = () => {
   return (
     <div id="container">
       {/* <img id="logo" src={alchemylogo} /> */}
+      <h1>BLOOD PACK - KILL SCENES</h1>
+      <p>Use this portal to claim your NFT</p>
+      <p>
+        <a href="https://www.screambox.com/bloodpacks/">screambox.com/bloodpacks</a> ~ <a href="https://rad.live/nft">rad.live/nft</a> ~ <a href="https://metamask.io/">MetaMask</a> ~ <a href="https://opensea.io/collection/bloodpack">OpenSea</a>
+      </p>
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (
           'Connected: ' + String(walletAddress).substring(0, 6) + '...' + String(walletAddress).substring(38)
@@ -95,7 +100,7 @@ const Wallet = () => {
               setMessage(message.status);
             })}
         >
-          Mint Token
+          Mint NFT
         </button>
         {/* <button onClick={() => setActive(walletAddress)}>Set Active</button> */}
       </div>
