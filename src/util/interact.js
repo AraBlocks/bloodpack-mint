@@ -114,7 +114,7 @@ export const mintToken = async (address, qty) => {
 
         return {
           success: true,
-          status: '✅ Check out your transaction on Etherscan: https://rinkeby.etherscan.io/tx/' + txHash
+          status: '✅ Check out your transaction on Etherscan: https://www.etherscan.io/tx/' + txHash
         };
       } catch (error) {
         console.log(error);
@@ -151,7 +151,7 @@ export const setActive = async () => {
     });
     return {
       success: true,
-      status: '✅ Check out your transaction on Etherscan: https://rinkeby.etherscan.io/tx/' + txHash
+      status: '✅ Check out your transaction on Etherscan: https://www.etherscan.io/tx/' + txHash
     };
   } catch (error) {
     return {
