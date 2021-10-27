@@ -76,7 +76,11 @@ const Wallet = () => {
       <h1>BLOOD PACK - KILL SCENES</h1>
       <p>Use this portal to claim your NFT</p>
       <p>
-        <a href="https://www.screambox.com/bloodpacks/">screambox.com/bloodpacks</a> ~ <a href="https://rad.live/nft">rad.live/nft</a> ~ <a href="https://metamask.io/">MetaMask</a> ~ <a href="https://opensea.io/collection/bloodpack">OpenSea</a>
+        <a href="https://www.screambox.com/bloodpacks/">screambox.com/bloodpacks</a> ~ <a href="https://rad.live/nft">rad.live/nft</a> ~ <a href="https://metamask.io/">MetaMask</a>
+      </p>
+      <p>Contract address ~ <i>0x88954a16b93f296d3d993793143e2dcbc32222b2</i></p>
+      <p>
+        <a href="https://opensea.io/collection/bloodpack">The Collection so far on OpenSea</a>
       </p>
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (

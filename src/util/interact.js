@@ -1,12 +1,14 @@
 require('dotenv').config();
-const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
+//const alchemyKey = "https://eth-rinkeby.alchemyapi.io/v2/tODrXnkO79J4FU8zU208CBEutvgtOyeg"
+const alchemyKey = "https://eth-mainnet.alchemyapi.io/v2/tODrXnkO79J4FU8zU208CBEutvgtOyeg"
 const { createAlchemyWeb3 } = require('@alch/alchemy-web3');
 const web3 = createAlchemyWeb3(alchemyKey);
 
 // const contractABI = require('./contract-abi.js');
 let contractABI = require('./contract-abi.json');
 // contractABI = JSON.parse(contractABI);
-const contractAddress = '0xd80B07293C85C91A221B0538369994C70fb5cdBe';//rinkeby
+// const contractAddress = '0xd80B07293C85C91A221B0538369994C70fb5cdBe';//rinkeby
+const contractAddress = '0x88954a16b93f296d3d993793143e2dcbc32222b2';//mainnet
 
 export const BloodpackContract = new web3.eth.Contract(contractABI, contractAddress);
 BloodpackContract.handleRevert = true;
