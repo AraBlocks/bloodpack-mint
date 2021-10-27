@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { cropClashContract, connectWallet, getCurrentWalletConnected, mintToken, setActive } from '../util/interact.js';
+import { BloodpackContract, connectWallet, getCurrentWalletConnected, mintToken, setActive } from '../util/interact.js';
 
 const Wallet = () => {
   const [ walletAddress, setWallet ] = useState('');
@@ -23,7 +23,7 @@ const Wallet = () => {
   }, []);
 
   function addSmartContractListener() {
-    cropClashContract.events.AssetMinted({}, (error, data) => {
+    BloodpackContract.events.AssetMinted({}, (error, data) => {
       if (error) {
         setStatus('😥 ' + error.message);
       } else {

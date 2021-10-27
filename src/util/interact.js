@@ -6,12 +6,12 @@ const web3 = createAlchemyWeb3(alchemyKey);
 // const contractABI = require('./contract-abi.js');
 let contractABI = require('./contract-abi.json');
 // contractABI = JSON.parse(contractABI);
-const contractAddress = '0x0994e5a6C7dc61173eCDC19c3A3dc3379302D58b';
+const contractAddress = '0x';
 
-export const cropClashContract = new web3.eth.Contract(contractABI, contractAddress);
-cropClashContract.handleRevert = true;
+export const BloodpackContract = new web3.eth.Contract(contractABI, contractAddress);
+BloodpackContract.handleRevert = true;
 
-// console.log(cropClashContract);
+// console.log(BloodpackContract);
 
 export const connectWallet = async () => {
   if (window.ethereum) {
@@ -90,16 +90,16 @@ export const getCurrentWalletConnected = async () => {
 };
 
 export const mintToken = async (address, qty) => {
-  cropClashContract.handleRevert = true;
+  BloodpackContract.handleRevert = true;
   const costOfNFTS = qty * 100000000000000000;
-  const checkTotal = await cropClashContract.methods.maximumAllowedTokensPerPurchase().call();
+  const checkTotal = await BloodpackContract.methods.maximumAllowedTokensPerPurchase().call();
   const currentBalance = await web3.eth.getBalance(address);
   if (currentBalance > costOfNFTS) {
     if (parseInt(qty) <= parseInt(checkTotal)) {
       const transactionParameters = {
         to: contractAddress, // Required except during contract publications.
         from: window.ethereum.selectedAddress, // must match user's active address.
-        data: cropClashContract.methods.mint(address, qty).encodeABI(), //make call to NFT smart contract
+        data: BloodpackContract.methods.mint(address, qty).encodeABI(), //make call to NFT smart contract
         value: '0x' + costOfNFTS.toString(16)
       };
 
@@ -139,7 +139,7 @@ export const setActive = async () => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: window.ethereum.selectedAddress, // must match user's active address.
-    data: cropClashContract.methods.setActive(true).encodeABI() //make call to NFT smart contract
+    data: BloodpackContract.methods.setActive(true).encodeABI() //make call to NFT smart contract
   };
   //sign transaction via Metamask
   try {
