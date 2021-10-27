@@ -92,11 +92,10 @@ const Wallet = () => {
       <h2 style={{ paddingTop: '18px' }}>Mint:</h2>
 
       <div>
-        <input type="number" placeholder="1" max="10" value={mintQty} onChange={(e) => setMintQty(e.target.value)} />
         <p id="status">{status}</p>
         <button
           onClick={() =>
-            mintToken(walletAddress, mintQty).then((message) => {
+            mintToken(walletAddress, 1).then((message) => {
               setMessage(message.status);
             })}
         >

@@ -20,7 +20,7 @@ export const connectWallet = async () => {
         method: 'eth_requestAccounts'
       });
       const obj = {
-        status: '👆🏽 Select a quantity to mint. Max: 10',
+        status: 'Press to claim the next NFT of 666',
         address: addressArray[0]
       };
       return obj;
@@ -57,7 +57,7 @@ export const getCurrentWalletConnected = async () => {
       if (addressArray.length > 0) {
         return {
           address: addressArray[0],
-          status: '👆🏽 Select a quantity to mint. Max: 10'
+          status: 'Press to claim the next NFT of 666'
         };
       } else {
         return {
