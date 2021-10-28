@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import {isDesktop} from 'react-device-detect';
 import { BloodpackContract, connectWallet, getCurrentWalletConnected, mintToken, setActive } from '../util/interact.js';
 
 const Wallet = () => {
@@ -93,25 +94,32 @@ const Wallet = () => {
       <div className="container">
         <p>To claim your NFT, get <a href="https://metamask.io/">MetaMask</a>, and send your wallet address some ETH for the gas fee. You can also buy ETH with a credit card right in MetaMask Connect your MetaMask to this page, and then mint your NFT, using the buttons below:</p>
       </div>
-      <div className="container">
-        <p>Status: {message}</p>
-        <button id="walletButton" onClick={connectWalletPressed}>
-        {walletAddress.length > 0 ? (
-        'Connected: ' + String(walletAddress).substring(0, 6) + '...' + String(walletAddress).substring(38)
+        {isDesktop ? (
+          <div className="container">
+            <p>Status: {message}</p>
+            <button id="walletButton" onClick={connectWalletPressed}>
+            {walletAddress.length > 0 ? (
+            'Connected: ' + String(walletAddress).substring(0, 6) + '...' + String(walletAddress).substring(38)
+            ) : (
+            <span>Connect Wallet</span>
+            )}
+            </button>
+            <p id="status">{status}</p>
+            <button
+            onClick={() =>
+            mintToken(walletAddress, 1).then((message) => {
+            setMessage(message.status);
+            })}
+            >
+            Mint NFT
+            </button>
+          </div>
         ) : (
-        <span>Connect Wallet</span>
-        )}
-        </button>
-        <p id="status">{status}</p>
-        <button
-        onClick={() =>
-        mintToken(walletAddress, 1).then((message) => {
-        setMessage(message.status);
-        })}
-        >
-        Mint NFT
-        </button>
-      </div>
+          <div className="container">
+            <p className="wallet-error">Wallet connect functionality is only available on desktop browsers.</p>
+          </div>
+        )
+        }
       <div className="container">
         <p>Once minted, the <i>KILL SCENES</i> live forever on the blockchain. You can see the gallery and marketplace on OpenSea:</p>
         <p><a href="https://opensea.io/collection/bloodpack">View the <i>KILL SCENES</i> on OpenSea</a></p>

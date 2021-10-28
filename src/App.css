@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App #constrainer .container img {
-  width: 100%;
-  max-width: 100%;
-}
-
 .App #constrainer {
   width: 66vw;
   margin: 0 auto;
@@ -16,9 +11,19 @@
   margin: 0 0 2vw 0;
 }
 
+.App #constrainer .container img {
+  width: 100%;
+  max-width: 100%;
+}
+
 .App #constrainer .container button {
   margin: 1vw 0;
   padding: 1vw 2vw;
+}
+
+.App #constrainer .container .wallet-error {
+  padding: 1vw 2vw;
+  background: #A6282A;
 }
 
 /* iPads (portrait and landscape) */
@@ -42,6 +47,10 @@
 
   .App #constrainer .container button {
     margin: .5vw 0;
+    padding: 2vw 3vw;
+  }
+
+  .App #constrainer .container .wallet-error {
     padding: 2vw 3vw;
   }
 }
