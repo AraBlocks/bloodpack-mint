@@ -82,7 +82,7 @@ const Wallet = () => {
         </p>
       </div>
       <div className="container">
-        <h1>Use this portal to claim your NFT</h1>
+        <h1>Use this portal to claim your NFT--if you dare!</h1>
       </div>
       <div className="container">
         <p><i>BLOOD PACK - KILL SCENES</i> is a generative series of 666 NFTs. Every card is unique. Many cards have rare attributes. Some attributes are ultra rare, or even single instance. The <i>KILL SCENES</i> are true NFT tokens minted on the Ethereum blockchain.</p>
